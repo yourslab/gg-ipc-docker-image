@@ -16,9 +16,9 @@ services:
       - DEPLOY_DEV_TOOLS=true
       - THING_NAME=GreengrassQuickStartCore
       - THING_GROUP_NAME=GreengrassQuickStartGroup
-volumes:  
-  - ~/.aws:/root/.aws/:ro #
-  - ~/Dev/aws-iot-device-sdk-cpp-v2:/root/aws-iot-device-sdk-cpp-v2
-  - ~/Dev/ipc-tests:/root/ipc-tests
-  - ~/Dev/uat:/root/greengrass-components/uat
-  - ~/Dev/uat/logs:/greengrass/v2/logs
+    volumes:
+      - ~/.aws:/root/.aws/:ro # Pertains to AWS credentials
+      - ~/aws-iot-device-sdk-cpp-v2:/root/aws-iot-device-sdk-cpp-v2 # SDK directory
+      - ~/gg-ipc-test:/root/ipc-tests # Test directory
+      - ~/gg-ipc-uat-recipe:/root/greengrass-components/uat # Recipe directory
+      - ~/gg-ipc-uat-recipe/logs:/greengrass/v2/logs
