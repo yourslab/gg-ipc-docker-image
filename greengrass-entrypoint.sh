@@ -113,6 +113,7 @@ fi
 
 echo "Compiling SDK"
 rm /greengrass/v2/logs/com.example.HelloWorld* || true
+mkdir -p /root/aws-iot-device-sdk-cpp-v2/build && cd /root/aws-iot-device-sdk-cpp-v2/build && cmake .. -DCMAKE_BUILD_TYPE="Debug" && make install
 mkdir -p /root/ipc-tests/build && cd /root/ipc-tests/build && cmake .. -DCMAKE_BUILD_TYPE="Debug" && make gg-ipc-uat
 cp gg-ipc-uat ../../greengrass-components/uat/artifacts/com.example.HelloWorld/1.0.0/
 
